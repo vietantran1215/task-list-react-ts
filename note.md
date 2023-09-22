@@ -15,7 +15,7 @@ Features:
   - [ ] Update a task
     - [ ] Update status
     - [ ] Update info
-- [ ] Delete a task
+- [ ] Delete a  task
   - [ ] Soft Delete
   - [ ] Hard Delete
 - [ ] Trash
