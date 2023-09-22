@@ -8,7 +8,7 @@ Task:
 - isDeleted
 
 Features:
-- [x] Task list
+- [ ] Task list
 - [ ] Task detail
 - [ ] Task form
   - [ ] Create a new task
