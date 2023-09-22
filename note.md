@@ -1,3 +1,13 @@
+TypeScript:
+- Infer type
+  - Implicit infer
+  - Explicit infer
+- Generics:
+  - Function
+  - Class
+  - Interface
+  - Type
+
 CRUD tasks
 
 Task:
@@ -11,7 +21,7 @@ Features:
 - [ ] Task list
 - [ ] Task detail
 - [ ] Task form
-  - [ ] Create a new task
+  - [x] Create a new task
   - [ ] Update a task
     - [ ] Update status
     - [ ] Update info
