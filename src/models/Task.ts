@@ -1,4 +1,4 @@
-type Status = "to-do" | "in-progress" | "completed";
+import Status from "./Status";
 
 export default interface Task {
   id: number;

@@ -1,10 +1,12 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import TaskPayload from '../models/TaskPayload';
 import { useAppDispatch } from '../redux/hooks';
-import { addTask } from '../redux/slices/task.slice';
+import { addTask, editTask } from '../redux/slices/task.slice';
+import { useNavigate } from 'react-router-dom';
 
 interface ITaskFormProps {
   taskId?: number;
+  formData?: TaskPayload;
 }
 
 // Abstraction trong OOP
@@ -24,8 +26,10 @@ const SubmitButton: React.FunctionComponent<ITaskFormProps> = ({ taskId }) => {
   }
 }
 
-const TaskForm: React.FunctionComponent<ITaskFormProps> = ({ taskId }) => {
+const TaskForm: React.FunctionComponent<ITaskFormProps> = ({ taskId, formData }) => {
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const [taskPayload, setTaskPayload] = useState<TaskPayload>({
     title: '',
@@ -40,9 +44,23 @@ const TaskForm: React.FunctionComponent<ITaskFormProps> = ({ taskId }) => {
     }))
   }
 
+  useEffect(() => {
+    if (formData) {
+      setTaskPayload(formData);
+    }
+  }, [formData]);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(addTask(taskPayload));
+    if (!taskId) {
+      // Create task
+      dispatch(addTask(taskPayload));
+      navigate('/task-list');
+    } else {
+      // Edit task
+      dispatch(editTask({ id: taskId as number, ...taskPayload}));
+      navigate(`/task-detail/${taskId}`);
+    }
   }
 
   return <form onSubmit={handleSubmit}>

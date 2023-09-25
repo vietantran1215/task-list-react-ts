@@ -18,17 +18,18 @@ Task:
 - isDeleted
 
 Features:
-- [ ] Task list
-- [ ] Task detail
+- [x] Task list
+- [ ] Search task (Optional)
+- [x] Task detail
 - [ ] Task form
   - [x] Create a new task
-  - [ ] Update a task
-    - [ ] Update status
-    - [ ] Update info
-- [ ] Delete a  task
-  - [ ] Soft Delete
-  - [ ] Hard Delete
-- [ ] Trash
+  - [x] Update a task
+    - [x] Update status
+    - [x] Update info
+- [x] Delete a task
+  - [x] Soft Delete
+  - [x] Hard Delete
+- [x] Trash
 
 Data storing:
 - Redux store
