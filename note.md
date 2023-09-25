@@ -21,7 +21,7 @@ Features:
 - [x] Task list
 - [ ] Search task (Optional)
 - [x] Task detail
-- [ ] Task form
+- [x] Task form
   - [x] Create a new task
   - [x] Update a task
     - [x] Update status
