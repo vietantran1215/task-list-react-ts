@@ -22,7 +22,7 @@ const Trash: React.FunctionComponent<ITrashProps> = () => {
   }
 
   return (<>
-    <h1>Task list</h1>
+    <h1>Trash</h1>
 
     {/* {JSON.stringify(tasks)} */}
 
